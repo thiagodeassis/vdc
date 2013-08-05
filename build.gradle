@@ -1,0 +1,38 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+
+repositories{
+  mavenCentral()
+  mavenRepo url: "http://maven.ow2.org/maven2/"
+}
+
+archivesBaseName = "parserlog"
+
+sourceSets {
+  test {
+    java {      
+      srcDir "src/test/unit"      
+    }
+    resources {      
+      srcDir "src/test/unit"
+    }
+  }
+}                   
+
+dependencies {  
+  compile 'com.google.guava:guava:14.0'
+  
+  testCompile group:"org.mockito", name:"mockito-all", version:"1.9.0-rc1"
+  testCompile group:"junit",       name:"junit",       version:"4.8.2"
+  compile     group:"org.dbunit",  name:"dbunit",      version:"2.4.8"
+}
+
+compileJava {
+  options.debug = true
+  options.debugOptions.debugLevel = "source,lines,vars"
+  options.encoding = "UTF-8"
+}
+
+task wrapper(type:Wrapper) {
+  gradleVersion = '1.5'
+}
