@@ -6,7 +6,7 @@ repositories{
   mavenRepo url: "http://maven.ow2.org/maven2/"
 }
 
-archivesBaseName = "parserlog"
+archivesBaseName = "vdc"
 
 sourceSets {
   test {
