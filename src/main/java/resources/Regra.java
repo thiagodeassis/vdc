@@ -1,4 +1,4 @@
-package validador;
+package resources;
 
 import java.math.BigDecimal;
 
@@ -12,19 +12,19 @@ public class Regra {
 	public Regra(){
 	}
 	
-	public Regra(Integer regra, String operacao, String classificacao, BigDecimal aliquota) {
-		this.numero = regra;
+	public Regra(Integer numero, String operacao, String classificacao, BigDecimal aliquota) {
+		this.numero = numero;
 		this.operacao = operacao;
 		this.classificacao = classificacao;
 		this.aliquota = aliquota;
 	}
 
-	public Integer getRegra() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setRegra(Integer regra) {
-		this.numero = regra;
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 
 	public String getOperacao() {
@@ -53,7 +53,7 @@ public class Regra {
 
 	@Override
 	public String toString() {
-		return "Regra [regra=" + numero + ", operacao=" + operacao
+		return "Regra [numero=" + numero + ", operacao=" + operacao
 				+ ", classificacao=" + classificacao + ", aliquota=" + aliquota
 				+ "]";
 	}
@@ -66,9 +66,9 @@ public class Regra {
 				+ ((aliquota == null) ? 0 : aliquota.hashCode());
 		result = prime * result
 				+ ((classificacao == null) ? 0 : classificacao.hashCode());
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result
 				+ ((operacao == null) ? 0 : operacao.hashCode());
-		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		return result;
 	}
 
@@ -91,17 +91,18 @@ public class Regra {
 				return false;
 		} else if (!classificacao.equals(other.classificacao))
 			return false;
-		if (operacao == null) {
-			if (other.operacao != null)
-				return false;
-		} else if (!operacao.equals(other.operacao))
-			return false;
 		if (numero == null) {
 			if (other.numero != null)
 				return false;
 		} else if (!numero.equals(other.numero))
 			return false;
+		if (operacao == null) {
+			if (other.operacao != null)
+				return false;
+		} else if (!operacao.equals(other.operacao))
+			return false;
 		return true;
 	}
+
 	
 }

@@ -1,4 +1,4 @@
-package validador;
+package resources;
 
 public class Saida {
 

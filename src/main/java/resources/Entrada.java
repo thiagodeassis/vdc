@@ -1,4 +1,4 @@
-package validador;
+package resources;
 
 import java.math.BigDecimal;
 
@@ -52,6 +52,9 @@ public class Entrada {
 	public void setValorImposto(BigDecimal valorImposto) {
 		this.valorImposto = valorImposto;
 	}
+	
+	
+	
 	
 	@Override
 	public String toString() {
