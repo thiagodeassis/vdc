@@ -53,9 +53,6 @@ public class Entrada {
 		this.valorImposto = valorImposto;
 	}
 	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Entrada [numero=" + numero + ", operacao=" + operacao

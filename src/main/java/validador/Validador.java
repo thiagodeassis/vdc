@@ -10,11 +10,21 @@ import resources.Regra;
 import resources.Saida;
 
 public class Validador {
+	
+	private GeraEntrada geraEntrada;
+	private GeraRegra geraRegra;
+	private String listaDeEntrada;
+	private String listaDeRegra;
 
 	private static final int DUAS_CASAS_DECIMAIS = 2;
-
-	public List<Saida> valida(List<Entrada> entradas, List<Regra> regras) {
-
+	
+	public Validador(){
+	}
+	
+	public List<Saida> valida(String pathEntrada, String pathRegra) {
+		
+		List<Entrada> entradas = geraEntrada.listaDeEntrada(pathEntrada);
+		List<Regra> regras = geraRegra.listaDeRegra(pathRegra);
 		List<Saida> saidas = new ArrayList<Saida>();
 		
 		for (Entrada entrada : entradas) {
