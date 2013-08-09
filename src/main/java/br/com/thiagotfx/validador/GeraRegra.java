@@ -26,6 +26,7 @@ public class GeraRegra {
 
 				regras.add(regra);
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,6 +35,7 @@ public class GeraRegra {
 	}
 	
 	private Regra parse(String linha) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(linha).useDelimiter("\\,");
 
 		while (scanner.hasNext()) {

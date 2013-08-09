@@ -8,12 +8,8 @@ import java.util.Scanner;
 
 import br.com.thiagotfx.model.Entrada;
 
-
-
-
-
 public class GeraEntrada {
-	
+
 	public List<Entrada> listaDeEntrada(String path) {
 
 		List<Entrada> entradas = new ArrayList<>();
@@ -26,16 +22,17 @@ public class GeraEntrada {
 
 				entradas.add(entrada);
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return entradas;
 	}
-	
-	
+
 	private Entrada parse(String linha) {
 
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(linha).useDelimiter("\\,");
 
 		while (scanner.hasNext()) {
@@ -45,7 +42,8 @@ public class GeraEntrada {
 			String valor = scanner.next();
 			String valorImposto = scanner.next();
 
-			Entrada entrada = new Entrada(numero, operacao, classificacao, valor, valorImposto);
+			Entrada entrada = new Entrada(numero, operacao, classificacao,
+					valor, valorImposto);
 			return entrada;
 		}
 		return null;
