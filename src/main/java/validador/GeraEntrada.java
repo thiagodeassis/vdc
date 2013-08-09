@@ -1,8 +1,7 @@
 package validador;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.math.BigDecimal;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,11 +11,12 @@ import resources.Entrada;
 public class GeraEntrada {
 	
 	public List<Entrada> listaDeEntrada(String path) {
-		
+
 		List<Entrada> entradas = new ArrayList<>();
-		
+
 		try {
-			Scanner scanner = new Scanner(new File(path));
+			Scanner scanner = new Scanner(new FileReader(path));
+			scanner.nextLine();
 			while (scanner.hasNextLine()) {
 				Entrada entrada = this.parse(scanner.nextLine());
 
@@ -31,18 +31,19 @@ public class GeraEntrada {
 	
 	
 	private Entrada parse(String linha) {
+
 		Scanner scanner = new Scanner(linha).useDelimiter("\\,");
+
 		while (scanner.hasNext()) {
 			Integer numero = scanner.nextInt();
 			String operacao = scanner.next();
 			String classificacao = scanner.next();
-			BigDecimal valor = scanner.nextBigDecimal();
-			BigDecimal valorImposto = scanner.nextBigDecimal();
+			String valor = scanner.next();
+			String valorImposto = scanner.next();
 
 			Entrada entrada = new Entrada(numero, operacao, classificacao, valor, valorImposto);
 			return entrada;
 		}
 		return null;
 	}
-
 }

@@ -12,11 +12,11 @@ public class Regra {
 	public Regra(){
 	}
 	
-	public Regra(Integer numero, String operacao, String classificacao, BigDecimal aliquota) {
+	public Regra(Integer numero, String operacao, String classificacao, String aliquota) {
 		this.numero = numero;
 		this.operacao = operacao;
 		this.classificacao = classificacao;
-		this.aliquota = aliquota;
+		this.aliquota = new BigDecimal(aliquota);
 	}
 
 	public Integer getNumero() {

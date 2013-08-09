@@ -14,12 +14,12 @@ public class Entrada {
 		
 	}
 	
-	public Entrada(Integer numero, String operacao, String classificacao, BigDecimal valor, BigDecimal valorImposto){
+	public Entrada(Integer numero, String operacao, String classificacao, String valor, String valorImposto){
 		this.numero = numero;
 		this.operacao = operacao;
 		this.classificacao = classificacao;
-		this.valor = valor;
-		this.valorImposto = valorImposto;
+		this.valor = new BigDecimal(valor);
+		this.valorImposto = new BigDecimal(valorImposto);
 	}
 	
 	public Integer getNumero() {

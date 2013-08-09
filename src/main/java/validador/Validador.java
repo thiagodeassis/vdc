@@ -11,28 +11,23 @@ import resources.Saida;
 
 public class Validador {
 	
-	private GeraEntrada geraEntrada;
-	private GeraRegra geraRegra;
-	private String listaDeEntrada;
-	private String listaDeRegra;
+	private GeraEntrada geraEntrada = new GeraEntrada();
+	private GeraRegra geraRegra = new GeraRegra();
 
 	private static final int DUAS_CASAS_DECIMAIS = 2;
 	
-	public Validador(){
-	}
-	
 	public List<Saida> valida(String pathEntrada, String pathRegra) {
-		
+
 		List<Entrada> entradas = geraEntrada.listaDeEntrada(pathEntrada);
 		List<Regra> regras = geraRegra.listaDeRegra(pathRegra);
-		List<Saida> saidas = new ArrayList<Saida>();
-		
+
+		List<Saida> saidas = new ArrayList<>();
 		for (Entrada entrada : entradas) {
-			
+
 			Regra regra = procuraRegra(regras, entrada);
-			
-			Saida saida = new Saida(entrada.getNumero(), regra.getNumero(), validaValorImposto(regra, entrada) ? "S" : "N");
-			
+
+			Saida saida = new Saida(entrada.getNumero(), regra.getNumero(),	validaValorImposto(regra, entrada) ? "S" : "N");
+
 			saidas.add(saida);
 		}
 		return saidas;
@@ -42,19 +37,18 @@ public class Validador {
 		for (Regra regra : regras) {
 			if (verificaOperacaoDe(entrada,regra) && classificacaoDa(entrada,regra)) {
 				return regra;
-			}
-
+			} 
 		}
 
 		return null; //TODO: CRIAR EXCEPTIONS ESPECIFICAS
 	}
 
 	private boolean verificaOperacaoDe(Entrada entrada, Regra regra) {
-		return entrada.getOperacao().equals(regra.getOperacao()) || regra.getOperacao() == "*";
+		return regra.getOperacao() == "*" || entrada.getOperacao().equals(regra.getOperacao());
 	}
 	
 	private boolean classificacaoDa(Entrada entrada, Regra regra) {
-		return entrada.getClassificacao().equals(regra.getClassificacao()) || regra.getClassificacao() == "*";
+		return regra.getClassificacao() == "*" || entrada.getClassificacao().equals(regra.getClassificacao());
 	}
 
 	private Boolean validaValorImposto(Regra regra, Entrada entrada) {
