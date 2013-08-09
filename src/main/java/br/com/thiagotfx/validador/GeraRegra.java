@@ -1,4 +1,4 @@
-package validador;
+package br.com.thiagotfx.validador;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import resources.Regra;
+import br.com.thiagotfx.model.Regra;
+
+
+
+
 
 public class GeraRegra {
 	

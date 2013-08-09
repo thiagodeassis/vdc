@@ -1,18 +1,25 @@
-package validador;
+package br.com.thiagotfx.validador;
 
 import java.util.List;
 
 import static junit.framework.Assert.*;
 
+
+
 import org.junit.Before;
 import org.junit.Test;
 
-import resources.Entrada;
+import br.com.thiagotfx.model.Entrada;
+import br.com.thiagotfx.validador.GeraEntrada;
+
+
+
+
 
 public class GeraEntradaTest {
 
-	String Entrada = "src/test/unit/validador/entrada.txt";
-	String EntradaCaractereCoringa = "src/test/unit/validador/entradaCaractereCoringa.txt";
+	String Entrada = "src/test/unit/br/com/thiagotfx/resources/Entrada.txt";
+	String EntradaCaractereCoringa = "src/test/unit/br/com/thiagotfx/resources/EntradaCaractereCoringa.txt";
 
 	private GeraEntrada geraEntrada;
 

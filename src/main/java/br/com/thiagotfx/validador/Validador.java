@@ -1,13 +1,17 @@
-package validador;
+package br.com.thiagotfx.validador;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.List;
 
-import resources.Entrada;
-import resources.Regra;
-import resources.Saida;
+import br.com.thiagotfx.model.Entrada;
+import br.com.thiagotfx.model.Regra;
+import br.com.thiagotfx.model.Saida;
+
+
+
+
 
 public class Validador {
 	
@@ -39,16 +43,15 @@ public class Validador {
 				return regra;
 			} 
 		}
-
-		return null; //TODO: CRIAR EXCEPTIONS ESPECIFICAS
+		return null;
 	}
 
 	private boolean verificaOperacaoDe(Entrada entrada, Regra regra) {
-		return regra.getOperacao() == "*" || entrada.getOperacao().equals(regra.getOperacao());
+		return regra.getOperacao().equals("*") || entrada.getOperacao().equals(regra.getOperacao());
 	}
 	
 	private boolean classificacaoDa(Entrada entrada, Regra regra) {
-		return regra.getClassificacao() == "*" || entrada.getClassificacao().equals(regra.getClassificacao());
+		return regra.getClassificacao().equals("*") || entrada.getClassificacao().equals(regra.getClassificacao());
 	}
 
 	private Boolean validaValorImposto(Regra regra, Entrada entrada) {

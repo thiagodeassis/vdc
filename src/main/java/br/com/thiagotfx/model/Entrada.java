@@ -1,4 +1,4 @@
-package resources;
+package br.com.thiagotfx.model;
 
 import java.math.BigDecimal;
 
