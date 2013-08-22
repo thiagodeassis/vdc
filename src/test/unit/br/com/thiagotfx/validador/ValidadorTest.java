@@ -14,10 +14,6 @@ import org.junit.Test;
 import br.com.thiagotfx.model.Saida;
 import br.com.thiagotfx.validador.Validador;
 
-
-
-
-
 public class ValidadorTest {
 
 	String entrada = "src/test/unit/br/com/thiagotfx/resources/Entrada.txt";

@@ -6,10 +6,6 @@ public class Saida {
 	private Integer numeroRegra;
 	private String correto;
 	
-	public Saida(){
-		
-	}
-	
 	public Saida(Integer numeroEntrada, Integer numeroRegra, String correto){
 		this.numeroEntrada = numeroEntrada;
 		this.numeroRegra = numeroRegra;

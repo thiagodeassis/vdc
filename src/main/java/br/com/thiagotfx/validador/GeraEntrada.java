@@ -24,18 +24,15 @@ public class GeraEntrada {
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Arquivo de entradas não encontrado.");
 		}
 		return entradas;
 	}
 
+	@SuppressWarnings("resource")
 	private Entrada parse(String linha) {
-
-		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(linha).useDelimiter("\\,");
 
-		while (scanner.hasNext()) {
 			Integer numero = scanner.nextInt();
 			String operacao = scanner.next();
 			String classificacao = scanner.next();
@@ -45,7 +42,5 @@ public class GeraEntrada {
 			Entrada entrada = new Entrada(numero, operacao, classificacao,
 					valor, valorImposto);
 			return entrada;
-		}
-		return null;
 	}
 }

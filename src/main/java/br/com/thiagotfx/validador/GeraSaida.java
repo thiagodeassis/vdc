@@ -1,5 +1,6 @@
 package br.com.thiagotfx.validador;
 
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class GeraSaida {
 			}
 			ps.flush();
 			ps.close();
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (FileNotFoundException e) {
+			System.out.println("Erro ao gerar saída.");
 		}
 
 	}

@@ -9,9 +9,6 @@ public class Regra {
 	private String classificacao;
 	private BigDecimal aliquota;
 	
-	public Regra(){
-	}
-	
 	public Regra(Integer numero, String operacao, String classificacao, String aliquota) {
 		this.numero = numero;
 		this.operacao = operacao;

@@ -10,10 +10,6 @@ public class Entrada {
 	private BigDecimal valor;
 	private BigDecimal valorImposto;
 	
-	public Entrada(){
-		
-	}
-	
 	public Entrada(Integer numero, String operacao, String classificacao, String valor, String valorImposto){
 		this.numero = numero;
 		this.operacao = operacao;

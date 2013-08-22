@@ -12,10 +12,6 @@ import org.junit.Test;
 import br.com.thiagotfx.model.Entrada;
 import br.com.thiagotfx.validador.GeraEntrada;
 
-
-
-
-
 public class GeraEntradaTest {
 
 	String Entrada = "src/test/unit/br/com/thiagotfx/resources/Entrada.txt";

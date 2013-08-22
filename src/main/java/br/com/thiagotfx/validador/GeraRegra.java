@@ -8,10 +8,6 @@ import java.util.Scanner;
 
 import br.com.thiagotfx.model.Regra;
 
-
-
-
-
 public class GeraRegra {
 	
 	public List<Regra> listaDeRegra(String path) {
@@ -28,17 +24,15 @@ public class GeraRegra {
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Arquivo de regras não encontrado.");
 		}
 		return regras;
 	}
 	
+	@SuppressWarnings("resource")
 	private Regra parse(String linha) {
-		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(linha).useDelimiter("\\,");
 
-		while (scanner.hasNext()) {
 			Integer numero = scanner.nextInt();
 			String operacao = scanner.next();
 			String classificacao = scanner.next();
@@ -46,8 +40,5 @@ public class GeraRegra {
 
 			Regra regra = new Regra(numero, operacao, classificacao, aliquota);
 			return regra;
-		}
-		scanner.close();
-		return null;
 	}
 }

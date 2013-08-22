@@ -9,10 +9,6 @@ import br.com.thiagotfx.model.Entrada;
 import br.com.thiagotfx.model.Regra;
 import br.com.thiagotfx.model.Saida;
 
-
-
-
-
 public class Validador {
 	
 	private GeraEntrada geraEntrada = new GeraEntrada();
